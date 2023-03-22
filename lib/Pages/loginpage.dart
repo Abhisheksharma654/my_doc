@@ -1,4 +1,3 @@
-// ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:my_doc/utils/routes.dart';
 
@@ -19,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(Duration(seconds: 1));
-      await Navigator.pushNamed(context, Myroutes.homeRoute);
+      await Navigator.pushNamed(context, MyRoutes.homeRoute);
       setState(() {
         changeButton = false;
       });
@@ -36,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               children: [
                 Image.asset(
-                  "assets/images/login_image.png",
+                  "assets/images/hey.png",
                   fit: BoxFit.cover,
                 ),
                 SizedBox(
@@ -66,6 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                           if (value!.isEmpty) {
                             return "Username cannot be empty";
                           }
+
                           return null;
                         },
                         onChanged: (value) {
@@ -85,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                           } else if (value.length < 6) {
                             return "Password length should be atleast 6";
                           }
+
                           return null;
                         },
                       ),

@@ -1,30 +1,26 @@
-// ignore_for_file: prefer_const_constructors
-
-import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-class Mydrawer extends StatelessWidget {
-  const Mydrawer({super.key});
-
+class MyDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    const imageUrl =
-        "https://forumstatic.oneplusmobile.com/opforum-gl/upload/image/front/avatar/20220331/5369431/1034172545265565705/1034172545265565705.jpg";
+    final imageUrl =
+        "https://avatars.githubusercontent.com/u/12619420?s=460&u=26db98cbde1dd34c7c67b85c240505a436b2c36d&v=4";
     return Drawer(
       child: Container(
-        color: Colors.black,
+        color: Colors.deepPurple,
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const [
+          children: [
             DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 margin: EdgeInsets.zero,
-                decoration: BoxDecoration(color: Colors.blueAccent),
-                accountName: Text("Abhishek"),
-                accountEmail: Text("Abhish@gmail.com"),
-                currentAccountPicture:
-                    CircleAvatar(backgroundImage: NetworkImage(imageUrl)),
+                accountName: Text("Pawan Kumar"),
+                accountEmail: Text("mtechviral@gmail.com"),
+                currentAccountPicture: CircleAvatar(
+                  backgroundImage: NetworkImage(imageUrl),
+                ),
               ),
             ),
             ListTile(
