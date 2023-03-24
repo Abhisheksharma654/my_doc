@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:my_doc/pages/loginpage.dart';
+import 'package:my_doc/Pages/cartpage.dart';
+import 'package:my_doc/Pages/loginpage.dart';
 import 'package:my_doc/utils/routes.dart';
-import 'pages/homepage.dart';
-import 'widgets/themes.dart';
+import 'package:my_doc/widgets/theme.dart';
+import 'Pages/Homepage.dart';
+// ignore: unused_import
+import 'package:google_fonts/google_fonts.dart';
+import 'package:my_doc/Pages/cartpage.dart';
 
 void main() {
-  runApp(Myapp());
+  runApp(const Myapp());
 }
 
 class Myapp extends StatelessWidget {
+  const Myapp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,11 +21,12 @@ class Myapp extends StatelessWidget {
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
       debugShowCheckedModeBanner: false,
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: Myroutes.homeRoute,
       routes: {
         "/": (context) => LoginPage(),
-        MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => LoginPage()
+        Myroutes.loginRoute: (context) => LoginPage(),
+        Myroutes.homeRoute: (context) => Homepage(),
+        Myroutes.cartRoute: (context) => cartpage(),
       },
     );
   }

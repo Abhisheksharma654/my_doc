@@ -1,16 +1,18 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:my_doc/models/catalog.dart';
 
-class ItemWidget extends StatelessWidget {
+class Productwidget extends StatelessWidget {
   final Item item;
-
-  const ItemWidget({Key? key, required this.item})
-      : assert(item != null),
+  const Productwidget({Key? key, required this.item})
+      : assert(Item != null),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color.fromARGB(255, 135, 198, 219),
+      shape: StadiumBorder(),
       child: ListTile(
         onTap: () {
           print("${item.name} pressed");
@@ -22,7 +24,7 @@ class ItemWidget extends StatelessWidget {
           "\$${item.price}",
           textScaleFactor: 1.5,
           style: TextStyle(
-            color: Colors.deepPurple,
+            color: Color.fromARGB(255, 0, 0, 0),
             fontWeight: FontWeight.bold,
           ),
         ),
