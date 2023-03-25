@@ -15,20 +15,22 @@ class Homedetailspage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      backgroundColor: MyTheme.creamColor,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
           alignment: MainAxisAlignment.spaceBetween,
           buttonPadding: EdgeInsets.zero,
           children: [
-            "\$${catalog.price}".text.bold.xl4.red600.make(),
+            "\$${catalog.price}".text.bold.xl3.red600.make(),
             ElevatedButton(
               onPressed: () {},
               style: ButtonStyle(
                   backgroundColor: MaterialStateProperty.all(
-                    MyTheme.darkBluishColor,
+                    context.theme.buttonColor,
                   ),
                   shape: MaterialStateProperty.all(
                     StadiumBorder(),
@@ -45,14 +47,14 @@ class Homedetailspage extends StatelessWidget {
               Hero(
                       tag: Key(catalog.id.toString()),
                       child: Image.network(catalog.image))
-                  .p20(),
+                  .h32(context),
               Expanded(
                   child: VxArc(
                 height: 30.0,
                 arcType: VxArcType.CONVEY,
                 edge: VxEdge.TOP,
                 child: Container(
-                  color: Colors.white,
+                  color: context.cardColor,
                   width: context.screenWidth,
                   child: Column(
                     children: [
@@ -65,11 +67,11 @@ class Homedetailspage extends StatelessWidget {
                           .xl
                           .make(),
                       10.heightBox,
-                      "The iPhone 12 Pro is a flagship smartphone"
+                      "The iPhone 12 Pro is a flagship smartphone from Apple that boasts a stunning 6.1-inch Super Retina XDR display with a resolution of 2532 x 1170 pixels"
                           .text
                           .textStyle(context.captionStyle)
                           .make()
-                          .p16()
+                          .p32()
                     ],
                   ).py64(),
                 ),
